@@ -22,6 +22,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class MainActivity extends Activity implements View.OnClickListener {
+
     private static final int PICK_FROM_CAMERA = 0;
     private static final int PICK_FROM_ALBUM = 1;
     private static final int CROP_FROM_iMAGE = 2;
@@ -48,6 +49,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         iv_AlbumImg = (ImageView) this.findViewById(R.id.ivAlbumImg);
         Button btn_UploadPicture = (Button) this.findViewById(R.id.btn_UploadPicture);
         Button btn = (Button) findViewById(R.id.buttonTest);
+        Button btnTestFile = (Button) findViewById(R.id.btn_test_file_activity);
 
 
         btn_UploadPicture.setOnClickListener(this);
@@ -203,8 +205,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 e.printStackTrace();
             }
             iv_AlbumImg.setImageBitmap(bitmap);
+        } else if(v.getId() == R.id.btn_test_file_activity){
+            startActivity(new Intent(MainActivity.this,TestFile.class));
         }
-
     }
 
     /*
